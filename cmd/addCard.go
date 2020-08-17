@@ -22,9 +22,9 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// addAnkiCardCmd represents the addAnkiCard command
-var addAnkiCardCmd = &cobra.Command{
-	Use:   "addAnkiCard",
+// addCardCmd represents the addAnkiCard command
+var addCardCmd = &cobra.Command{
+	Use:   "addCard",
 	Short: "Brings up the Add Card dialog from a currently open Anki session",
 	Run: func(cmd *cobra.Command, args []string) {
 
@@ -33,7 +33,7 @@ var addAnkiCardCmd = &cobra.Command{
 				DeckName:  "General::Random",
 				ModelName: "Context Basic (optional reversed card)",
 				Options: map[string]bool{
-					"closeAfterAdding": true,
+					"closeAfterAdding": false,
 				},
 			},
 		})
@@ -44,7 +44,7 @@ var addAnkiCardCmd = &cobra.Command{
 }
 
 func init() {
-	rootCmd.AddCommand(addAnkiCardCmd)
+	rootCmd.AddCommand(addCardCmd)
 
 	// Here you will define your flags and configuration settings.
 

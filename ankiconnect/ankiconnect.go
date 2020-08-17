@@ -8,14 +8,15 @@ import (
 	"net/http"
 )
 
-const URL = "http://localhost:8765"
+// URL of AnkiConnect
+var URL = "http://localhost:8765"
 
 // GuiAddCardsNote defines a note for use with guiAddCards
 type GuiAddCardsNote struct {
-	DeckName  string          `json:"deckName"`
-	ModelName string          `json:"modelName"`
-	Options   map[string]bool `json:"options,omitempty"`
-	Fields    map[string]bool `json:"fields,omitempty"`
+	DeckName  string            `json:"deckName"`
+	ModelName string            `json:"modelName"`
+	Options   map[string]bool   `json:"options,omitempty"`
+	Fields    map[string]string `json:"fields,omitempty"`
 }
 
 // GuiAddCardsParams is the parameters for the payload for the guiAddCards endpoint on AnkiConnect
